@@ -1,9 +1,7 @@
 package main.java.by.bsuir.WT.lab2.entity.criteria;
 
-import main.java.by.bsuir.WT.lab2.entity.enums.Color;
-
 public class SearchCriteria {
-    public static enum Oven{
+    public enum Oven{
         POWER_CONSUMPTION("powerConsumption"),
         WEIGHT("weight"),
         CAPACITY("capacity"),
@@ -21,7 +19,7 @@ public class SearchCriteria {
         public String toString() { return value; }
     }
 
-    public static enum Laptop{
+    public enum Laptop{
         BATTERY_CAPACITY("batteryCapacity"),
         OS("os"),
         MEMORY_ROM("memoryRom"),
@@ -41,7 +39,7 @@ public class SearchCriteria {
         }
     }
 
-    public static enum Refrigerator{
+    public enum Refrigerator{
         POWER_CONSUMPTION("powerConsumption"),
         WEIGHT("weight"),
         FREEZER_CAPACITY("freezerCapacity"),
@@ -61,7 +59,7 @@ public class SearchCriteria {
         }
     }
 
-    public static enum VacuumCleaner{
+    public enum VacuumCleaner{
         POWER_CONSUMPTION("powerConsumption"),
         FILTER_TYPE("filterType"),
         BAG_TYPE("bagType"),
@@ -100,7 +98,7 @@ public class SearchCriteria {
         }
     }
 
-    public static enum Speakers{
+    public enum Speakers{
         POWER_CONSUMPTION("powerConsumption"),
         NUMBER_OF_SPEAKERS("numberOfSpeakers"),
         FREQUENCY_RANGE_MIN("frequencyRangeMin"),
@@ -119,7 +117,7 @@ public class SearchCriteria {
         }
     }
 
-    public static enum Kettle {
+    public enum Kettle {
         POWER_CONSUMPTION("powerConsumption"),
         WATER_CAPACITY ("waterCapacity"),
         COLOR("color");

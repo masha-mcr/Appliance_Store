@@ -5,8 +5,8 @@ import java.util.Map;
 
 public class Criteria {
 
-    private String groupSearchName;
-    private Map<String, Object> criteria = new HashMap<String, Object>();
+    private final String groupSearchName;
+    private Map<String, Object> criteria = new HashMap<>();
 
     public Criteria(String groupSearchName) {
         this.groupSearchName = groupSearchName;

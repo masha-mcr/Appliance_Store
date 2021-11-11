@@ -23,10 +23,7 @@ public class Validator {
 
     private static boolean doesCriteriaExists(Criteria criteria, Class<? extends Enum<?>> e){
         Set<String> properties = criteria.getCriteria().keySet();
-        Object[] o = Arrays.stream(e.getEnumConstants()).toArray();
-        System.out.println(o[2].toString());
         String[] arr = Arrays.stream(e.getEnumConstants()).map(Enum::toString).toArray(String[]::new);
-        System.out.println(o[0].toString());
         return Arrays.asList(arr).containsAll(properties);
     }
 

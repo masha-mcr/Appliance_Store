@@ -31,9 +31,7 @@ public class ApplianceDAOimpl implements ApplianceDAO {
         catch (ArrayIndexOutOfBoundsException e) {
             // end of xml file
         }
-        catch (FileNotFoundException e) {
-            System.out.println(e.getMessage());
-        } catch (NoSuchFieldException | IllegalAccessException e) {
+        catch (FileNotFoundException | NoSuchFieldException | IllegalAccessException e) {
             System.out.println(e.getMessage());
         }
 
@@ -59,7 +57,7 @@ public class ApplianceDAOimpl implements ApplianceDAO {
             Appliance result;
             do{
                 result = (Appliance)decoder.readObject();
-                appliances.add((Appliance) result);
+                appliances.add(result);
             }
             while(result != null);
         }

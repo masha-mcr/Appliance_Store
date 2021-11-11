@@ -1,6 +1,5 @@
 package main.java.by.bsuir.WT.lab2.main;
 
-import main.java.by.bsuir.WT.lab2.dao.impl.ApplianceDAOimpl;
 import main.java.by.bsuir.WT.lab2.entity.*;
 import main.java.by.bsuir.WT.lab2.entity.criteria.Criteria;
 import main.java.by.bsuir.WT.lab2.entity.criteria.SearchCriteria;
