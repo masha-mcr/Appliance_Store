@@ -1,9 +1,11 @@
 package main.java.by.bsuir.WT.lab2.service.impl;
 
+import main.java.by.bsuir.WT.lab2.dao.ApplianceDAO;
 import main.java.by.bsuir.WT.lab2.dao.DAOFactory;
 import main.java.by.bsuir.WT.lab2.entity.Appliance;
 import main.java.by.bsuir.WT.lab2.entity.criteria.Criteria;
 import main.java.by.bsuir.WT.lab2.service.ApplianceService;
+import main.java.by.bsuir.WT.lab2.service.validation.Validator;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -15,7 +17,12 @@ public class ApplianceServiceImpl implements ApplianceService {
 
     @Override
     public List<Appliance> find(Criteria criteria) {
-        return null;
+        if (Validator.validCriteria(criteria)) {
+            ApplianceDAO applianceDAO = DAOFactory.getInstance().getApplianceDAO();
+            return applianceDAO.find(criteria);
+        }
+        else
+            return null;
     }
 
     @Override

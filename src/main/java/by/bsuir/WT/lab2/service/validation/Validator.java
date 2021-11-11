@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class Validator {
 
-    public static boolean isCriteriaValid(Criteria criteria){
+    public static boolean validCriteria(Criteria criteria){
         return switch (criteria.getGroupSearchName()){
             case "Kettle" -> doesCriteriaExists(criteria, SearchCriteria.Kettle.class);
             case "Laptop" -> doesCriteriaExists(criteria, SearchCriteria.Laptop.class);

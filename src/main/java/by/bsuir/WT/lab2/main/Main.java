@@ -15,7 +15,14 @@ public class Main {
         ApplianceService service = ServiceFactory.getInstance().getApplianceService();
 
         Criteria kettleCriteria = new Criteria(SearchCriteria.Kettle.class.getSimpleName());
-        List<Appliance> kettlesOrderedByName = service.sort(Comparator.comparing(Appliance::getName),service.find(kettleCriteria));
+        List<Appliance> kettles = service.find(kettleCriteria);
+        List<Appliance> kettlesOrderedByName = service.sort(Comparator.comparing(Appliance::getName), kettles);
+        System.out.println("\nВсе чайники(в алфавитном порядке): ");
+        PrintApplianceInfo.print(kettlesOrderedByName);
+
+        List<Appliance> minPriceAppliances = service.getMin(Comparator.comparing(Appliance::getPrice));
+        System.out.println("\nСамый дешевый прибор: ");
+        PrintApplianceInfo.print(minPriceAppliances);
 
     }
 }
