@@ -4,7 +4,7 @@ import main.java.by.bsuir.WT.lab2.entity.enums.Color;
 
 public class SearchCriteria {
     public static enum Oven{
-        POWER_CONSUMPTION("PowerConsumption"),
+        POWER_CONSUMPTION("powerConsumption"),
         WEIGHT("weight"),
         CAPACITY("capacity"),
         DEPTH ("depth"),

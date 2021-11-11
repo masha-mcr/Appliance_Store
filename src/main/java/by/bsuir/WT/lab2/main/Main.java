@@ -30,7 +30,10 @@ public class Main {
 
         Criteria ovenCriteria = new Criteria(SearchCriteria.Oven.class.getSimpleName());
         ovenCriteria.add("powerConsumption", 2000);
-        List<Appliance> ovens = service.find(ovenCriteria);
-        PrintApplianceInfo.print(ovens);
+        List<Appliance> ovens2000 = service.find(ovenCriteria);
+        if(ovens2000 != null) {
+            System.out.println("\nДуховки с мощностью 2000: ");
+            PrintApplianceInfo.print(ovens2000);
+        }
     }
 }

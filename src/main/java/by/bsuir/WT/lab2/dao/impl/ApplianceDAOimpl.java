@@ -80,6 +80,7 @@ public class ApplianceDAOimpl implements ApplianceDAO {
         Set<String> properties = criteria.getCriteria().keySet();
         for (String property : properties) {
             Field field = appliance.getClass().getDeclaredField(property);
+            field.setAccessible(true);
             Object fieldValue = field.get(appliance);
             if (!fieldValue.toString().equals(criteria.getCriteria().get(property).toString())) {
                 return false;
