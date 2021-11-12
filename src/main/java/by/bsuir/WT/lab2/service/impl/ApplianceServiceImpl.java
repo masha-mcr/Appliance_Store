@@ -14,7 +14,11 @@ import java.util.stream.Collectors;
 
 public class ApplianceServiceImpl implements ApplianceService {
 
-
+    /**
+     * Finds all appliances that fit the criteria if criteria are valid.
+     * @param criteria
+     * @return list of found appliances
+     */
     @Override
     public List<Appliance> find(Criteria criteria) {
         if (Validator.validCriteria(criteria)) {

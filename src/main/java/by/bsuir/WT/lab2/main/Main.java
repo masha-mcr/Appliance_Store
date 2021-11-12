@@ -39,7 +39,7 @@ public class Main {
         laptopCriteria.add("price",1445.0);
         List<Appliance> laptops1445 = service.find(laptopCriteria);
         if(laptops1445 != null) {
-            System.out.println("\nНоутбуки стоиомстью 1445: ");
+            System.out.println("\nНоутбуки стоимостью 1445: ");
             PrintApplianceInfo.print(laptops1445);
         }
 

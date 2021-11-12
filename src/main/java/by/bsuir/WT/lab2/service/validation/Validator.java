@@ -21,6 +21,12 @@ public class Validator {
         };
     }
 
+    /**
+     * Compares criteria to search criteria available for an appliance.
+     * @param criteria criteria to search for
+     * @param e all search criteria available for an appliance
+     * @return true if appliance has all of criteria
+     */
     private static boolean doesCriteriaExists(Criteria criteria, Class<? extends Enum<?>> e){
         Set<String> properties = criteria.getCriteria().keySet();
         String[] arr = Arrays.stream(e.getEnumConstants()).map(Enum::toString).toArray(String[]::new);

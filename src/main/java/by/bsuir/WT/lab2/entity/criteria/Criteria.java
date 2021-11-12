@@ -20,6 +20,11 @@ public class Criteria {
         return groupSearchName;
     }
 
+    /**
+     * Adds a set of property and its desired value to map of criteria.
+     * @param searchCriteria searched criteria
+     * @param value desired value
+     */
     public void add(String searchCriteria, Object value) {
         criteria.put(searchCriteria, value);
     }

@@ -11,9 +11,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * DAO implementation using xml file as storage.
+ */
 public class ApplianceDAOimpl implements ApplianceDAO {
 
+    /**
+     * Path to xml file.
+     */
     private static final String path = "src/main/resources/appliances.xml";
+
+    /**
+     * Finds appliances that fit certain criteria.
+     * @param criteria a set of criteria
+     * @return list of appliances that fit the criteria
+     */
     @Override
     public List<Appliance> find(Criteria criteria) {
         List<Appliance> foundAppliances = new ArrayList<>();
@@ -38,6 +50,10 @@ public class ApplianceDAOimpl implements ApplianceDAO {
         return foundAppliances;
     }
 
+    /**
+     * Saves list to xml file specified in path field.
+     * @param appliences list of appliances to save
+     */
     @Override
     public void save(List<Appliance> appliences) {
         try(XMLEncoder encoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(path)))){
@@ -50,6 +66,10 @@ public class ApplianceDAOimpl implements ApplianceDAO {
         }
     }
 
+    /**
+     * Parses all appliances from xml file specified in path field.
+     * @return list of all appliances
+     */
     @Override
     public List<Appliance> parseAll() {
         List<Appliance> appliances = new ArrayList<>();
@@ -70,6 +90,13 @@ public class ApplianceDAOimpl implements ApplianceDAO {
         return appliances;
     }
 
+    /**
+     * Checks whether the appliance's properties fit certain criteria.
+     * @param appliance appliance which criteria need to be checked
+     * @param criteria a set of criteria
+     * @return true if appliance fits the specified criteria
+     * @throws IllegalAccessException if access to appliance field is closed
+     */
     private boolean fitsCriteria(Appliance appliance, Criteria criteria) throws IllegalAccessException {
         if (!appliance.getClass().getSimpleName().equals(criteria.getGroupSearchName())){
             return false;

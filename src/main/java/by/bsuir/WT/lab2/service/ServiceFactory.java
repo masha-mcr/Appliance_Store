@@ -2,6 +2,9 @@ package main.java.by.bsuir.WT.lab2.service;
 
 import main.java.by.bsuir.WT.lab2.service.impl.ApplianceServiceImpl;
 
+/**
+ *A factory for creating ApplianceService.
+ */
 public class ServiceFactory {
     private static final ServiceFactory instance = new ServiceFactory();
 

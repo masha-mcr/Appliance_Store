@@ -1,5 +1,8 @@
 package main.java.by.bsuir.WT.lab2.entity.criteria;
 
+/**
+ * Class containing enums of all appliances type that specify appliance's criteria that can be searched for.
+ */
 public class SearchCriteria {
     public enum Oven{
         NAME("name"),
@@ -31,8 +34,15 @@ public class SearchCriteria {
         CPU("cpu"),
         DISPLAY_INCHES("displayInches");
 
+        /**
+         * String representation of criteria name.
+         */
         private final String value;
 
+        /**
+         * Enum constructor specifying string representation.
+         * @param value string representation of criteria name
+         */
         Laptop(String value){
             this.value = value;
         }
