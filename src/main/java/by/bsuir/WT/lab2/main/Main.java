@@ -35,10 +35,13 @@ public class Main {
             PrintApplianceInfo.print(ovens2000);
         }
 
-        Criteria c = new Criteria(SearchCriteria.Laptop.class.getSimpleName());
-        c.add("price",1445.0);
-        ovens2000 = service.find(c);
-        PrintApplianceInfo.print(ovens2000);
+        Criteria laptopCriteria = new Criteria(SearchCriteria.Laptop.class.getSimpleName());
+        laptopCriteria.add("price",1445.0);
+        List<Appliance> laptops1445 = service.find(laptopCriteria);
+        if(laptops1445 != null) {
+            System.out.println("\nНоутбуки стоиомстью 1445: ");
+            PrintApplianceInfo.print(laptops1445);
+        }
 
 
     }

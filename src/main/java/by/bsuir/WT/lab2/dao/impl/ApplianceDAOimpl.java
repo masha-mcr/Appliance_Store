@@ -85,6 +85,7 @@ public class ApplianceDAOimpl implements ApplianceDAO {
                     return false;
                 }
             } catch (NoSuchFieldException e){
+
             }
         }
         for (String property : properties) {
