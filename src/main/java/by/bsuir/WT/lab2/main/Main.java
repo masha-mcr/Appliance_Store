@@ -34,5 +34,12 @@ public class Main {
             System.out.println("\nДуховки с мощностью 2000: ");
             PrintApplianceInfo.print(ovens2000);
         }
+
+        Criteria c = new Criteria(SearchCriteria.Laptop.class.getSimpleName());
+        c.add("price",1445.0);
+        ovens2000 = service.find(c);
+        PrintApplianceInfo.print(ovens2000);
+
+
     }
 }

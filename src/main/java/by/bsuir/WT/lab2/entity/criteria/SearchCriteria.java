@@ -2,6 +2,8 @@ package main.java.by.bsuir.WT.lab2.entity.criteria;
 
 public class SearchCriteria {
     public enum Oven{
+        NAME("name"),
+        PRICE("price"),
         POWER_CONSUMPTION("powerConsumption"),
         WEIGHT("weight"),
         CAPACITY("capacity"),
@@ -20,6 +22,8 @@ public class SearchCriteria {
     }
 
     public enum Laptop{
+        NAME("name"),
+        PRICE("price"),
         BATTERY_CAPACITY("batteryCapacity"),
         OS("os"),
         MEMORY_ROM("memoryRom"),
@@ -40,6 +44,8 @@ public class SearchCriteria {
     }
 
     public enum Refrigerator{
+        NAME("name"),
+        PRICE("price"),
         POWER_CONSUMPTION("powerConsumption"),
         WEIGHT("weight"),
         FREEZER_CAPACITY("freezerCapacity"),
@@ -60,6 +66,8 @@ public class SearchCriteria {
     }
 
     public enum VacuumCleaner{
+        NAME("name"),
+        PRICE("price"),
         POWER_CONSUMPTION("powerConsumption"),
         FILTER_TYPE("filterType"),
         BAG_TYPE("bagType"),
@@ -80,6 +88,8 @@ public class SearchCriteria {
     }
 
     public static enum TabletPC{
+        NAME("name"),
+        PRICE("price"),
         BATTERY_CAPACITY("batteryCapacity"),
         DISPLAY_INCHES("displayInches"),
         MEMORY_ROM("memoryRom"),
@@ -99,6 +109,8 @@ public class SearchCriteria {
     }
 
     public enum Speakers{
+        NAME("name"),
+        PRICE("price"),
         POWER_CONSUMPTION("powerConsumption"),
         NUMBER_OF_SPEAKERS("numberOfSpeakers"),
         FREQUENCY_RANGE_MIN("frequencyRangeMin"),
@@ -118,6 +130,8 @@ public class SearchCriteria {
     }
 
     public enum Kettle {
+        NAME("name"),
+        PRICE("price"),
         POWER_CONSUMPTION("powerConsumption"),
         WATER_CAPACITY ("waterCapacity"),
         COLOR("color");

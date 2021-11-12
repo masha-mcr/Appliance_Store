@@ -31,7 +31,7 @@ public class ApplianceDAOimpl implements ApplianceDAO {
         catch (ArrayIndexOutOfBoundsException e) {
             // end of xml file
         }
-        catch (FileNotFoundException | NoSuchFieldException | IllegalAccessException e) {
+        catch (FileNotFoundException | IllegalAccessException e) {
             System.out.println(e.getMessage());
         }
 
@@ -70,18 +70,32 @@ public class ApplianceDAOimpl implements ApplianceDAO {
         return appliances;
     }
 
-    private boolean fitsCriteria(Appliance appliance, Criteria criteria) throws NoSuchFieldException, IllegalAccessException {
+    private boolean fitsCriteria(Appliance appliance, Criteria criteria) throws IllegalAccessException {
         if (!appliance.getClass().getSimpleName().equals(criteria.getGroupSearchName())){
             return false;
         }
 
         Set<String> properties = criteria.getCriteria().keySet();
         for (String property : properties) {
-            Field field = appliance.getClass().getDeclaredField(property);
-            field.setAccessible(true);
-            Object fieldValue = field.get(appliance);
-            if (!fieldValue.toString().equals(criteria.getCriteria().get(property).toString())) {
-                return false;
+            try {
+                Field field = appliance.getClass().getDeclaredField(property);
+                field.setAccessible(true);
+                Object fieldValue = field.get(appliance);
+                if (!fieldValue.toString().equals(criteria.getCriteria().get(property).toString())) {
+                    return false;
+                }
+            } catch (NoSuchFieldException e){
+            }
+        }
+        for (String property : properties) {
+            try {
+                Field parentField = appliance.getClass().getSuperclass().getDeclaredField(property);
+                parentField.setAccessible(true);
+                Object parentFieldValue = parentField.get(appliance);
+                if (!parentFieldValue.toString().equals(criteria.getCriteria().get(property).toString())) {
+                    return false;
+                }
+            } catch (NoSuchFieldException e) {
             }
         }
         return true;
